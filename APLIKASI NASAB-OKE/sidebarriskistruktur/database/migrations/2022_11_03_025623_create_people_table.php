@@ -15,21 +15,21 @@ return new class extends Migration
     {
         Schema::create('people', function (Blueprint $table) {
             $table->uuid('uuid')->primary();
-            $table->foreignUuid('nama_ayah');
-            $table->foreignUuid('nama_ibu');
+            $table->foreignUuid('uuid_ayah')->nullable();
+            $table->foreignUuid('uuid_ibu')->nullable();
+            $table->string('nama');
+            $table->boolean('jenis_kelamin');
+            $table->string('nama_ayah');
+            $table->string('nama_ibu');
+            $table->string('telepon');
+            $table->string('pekerjaan');
+            $table->string('foto_profil');
             $table->integer('tahun_wafat');
             $table->integer('tahun_lahir');
             $table->date('tanggal_wafat');
             $table->date('tanggal_lahir');
-            $table->string('nama');
-            $table->string('password');
-            $table->string('kontak');
-            $table->string('gambar');
-            $table->string('foto_profil');
-            $table->string('pekerjaan');
-            $table->boolean('jenis_kelamin');
+            $table->date('tanggal_pernikahan');
             $table->text('alamat');
-            $table->text('deskripsi');
             $table->timestamps();
         });
     }
